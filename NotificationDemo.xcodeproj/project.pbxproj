@@ -333,7 +333,7 @@
 					1834B1921E7FA93A00DA89F6 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 9Z59VK8KP3;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -623,11 +623,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NotificationDemo/NotificationDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Bonifant (7SU8A42GEC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Bonifant (7SU8A42GEC)";
 				DEVELOPMENT_TEAM = 9Z59VK8KP3;
 				INFOPLIST_FILE = NotificationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Immanent.NotificationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "79810414-edf5-4785-8427-6af290c53def";
+				PROVISIONING_PROFILE_SPECIFIER = NGCTest;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -638,11 +643,16 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = NotificationDemo/NotificationDemo.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: David Bonifant (7SU8A42GEC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: David Bonifant (7SU8A42GEC)";
 				DEVELOPMENT_TEAM = 9Z59VK8KP3;
 				INFOPLIST_FILE = NotificationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Immanent.NotificationDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "79810414-edf5-4785-8427-6af290c53def";
+				PROVISIONING_PROFILE_SPECIFIER = NGCTest;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -776,6 +786,7 @@
 				1834B1BD1E7FA93A00DA89F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1834B1BE1E7FA93A00DA89F6 /* Build configuration list for PBXNativeTarget "NotificationDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -784,6 +795,7 @@
 				1834B1C01E7FA93A00DA89F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1834B1C11E7FA93A00DA89F6 /* Build configuration list for PBXNativeTarget "NotificationDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -792,6 +804,7 @@
 				1834B1C31E7FA93A00DA89F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1834B1D61E7FBB2E00DA89F6 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
 			isa = XCConfigurationList;
@@ -800,6 +813,7 @@
 				1834B1D81E7FBB2E00DA89F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1834B1EC1E7FBEEE00DA89F6 /* Build configuration list for PBXNativeTarget "NotificationViewController" */ = {
 			isa = XCConfigurationList;
@@ -808,6 +822,7 @@
 				1834B1EE1E7FBEEE00DA89F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
