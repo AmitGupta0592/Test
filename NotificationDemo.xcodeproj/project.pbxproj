@@ -472,7 +472,7 @@
 				INFOPLIST_FILE = NotificationDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Immanent.NotificationDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.ngcgroupinc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -493,7 +493,7 @@
 				INFOPLIST_FILE = NotificationDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Immanent.NotificationDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.ngcgroupinc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
