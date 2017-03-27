@@ -9,6 +9,16 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>NotificationService.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>NotificationViewController.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -23,6 +33,16 @@
 			<true/>
 		</dict>
 		<key>1834B1B11E7FA93A00DA89F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1834B1CD1E7FBB2E00DA89F6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1834B1DD1E7FBEEE00DA89F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,18 +7,105 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+         self.registeringRemoteNotification(application: application)
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
+        setActions()
+        UNUserNotificationCenter.current().getNotificationSettings(){ (setttings) in
+            
+            switch setttings.soundSetting{
+            case .enabled:
+                
+                print("enabled sound setting")
+                
+            case .disabled:
+                
+                print("setting has been disabled")
+                
+            case .notSupported:
+                print("something vital went wrong here")
+            }
+        }
         return true
     }
+    
+    
+    func setActions() {
+        let Notify = UNNotificationAction(
+            identifier: "PIdentifier",
+            title: "RM Notification "
+        )
+        let dismiss = UNNotificationAction(
+            identifier: "dismiss",
+            title: "Dismiss",
+            options: [.destructive]
+        )
+        let category = UNNotificationCategory(
+            identifier: "PNotify",
+            actions: [Notify, dismiss],
+            intentIdentifiers: []
+        )
+        
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+    }
 
+    func registeringRemoteNotification(application: UIApplication){
+        if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().delegate = self
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+                guard error == nil else {
+                    //Display Error.. Handle Error.. etc..
+                    print("ERROR")
+                    return
+                }
+                
+                if granted {
+                    //Do stuff here..
+                    print("GRANTED")
+                    application.registerForRemoteNotifications()
+                }
+                else {
+                    //Handle user denying permissions..
+                }
+            }
+        }
+        else {
+            let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            //application.registerUserNotificationSettings(settings)
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        }
+    }
+ func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        var token = ""
+        for i in 0..<deviceToken.count {
+            token = token + String(format: "%02.2hhx", arguments: [deviceToken[i]])
+        }
+        print(token)
+        UserDefaults.standard.set(token, forKey: "DEVICE_TOKEN")
+    }
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Fail To Register remote Notification")
+    }
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        
+        print("Push is recieved")
+        print(userInfo)
+        let info = userInfo["aps"] as? NSDictionary
+        print("Info is \(info?.value(forKey: "alert")!)")
+    }
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
